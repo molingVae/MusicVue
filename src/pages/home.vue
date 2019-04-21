@@ -6,7 +6,7 @@
     <Swiper_Banner />
     <Music_ListNav/>
 
-    <router-view />
+   <router-view/>
   </div>
 </template>
 

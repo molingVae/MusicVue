@@ -29,13 +29,13 @@ export default new Router({
           children: [
             {
               path:"hot",
-              name: HotList
+              component: HotList
             } ,{
               path:"king",
-              name: KingList
+              component: KingList
             } ,{
               path:"news",
-              name: NewList
+              component: NewList
             }
           ]
         },

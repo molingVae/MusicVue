@@ -33,7 +33,6 @@
         this.$axios.get(url)
           .then(res => {
         this.todayRecommend = res.data.song_list
-            console.log(this.todayRecommend)
       })
           .catch(error => {
         console.log(error);
