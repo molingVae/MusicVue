@@ -1,12 +1,15 @@
 <template lang="html">
   <div class="">
 
-    <Today_Recommend />
+    <Today_Recommend  title="今日榜单" type="24"/>
     <News_Music />
     <Swiper_Banner />
     <Music_ListNav/>
+  <keep-alive>
+    <router-view/>
+  </keep-alive>
 
-   <router-view/>
+    <Today_Recommend  title="热门歌单" type="2"/>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-    我的
+    敬请期待
   </div>
 </template>
 

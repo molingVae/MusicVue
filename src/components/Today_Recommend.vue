@@ -2,18 +2,20 @@
 
   <div class="mod-albums">
     <div class="hd log url">
-      <h2>今日推荐</h2>
-        更多
+      <h2>{{title}}</h2>
+      <router-link :to="{name:'MoreList',params:{type:this.type,title: this.title}}">
+      更多
+    </router-link>
     </div>
     <div class="container">
       <div class="gallery">
         <div class="scroller">
-          <div class="card url" v-for="(item,index) in todayRecommend" :key="index">
+          <router-link tag="div" :to="{name:'MusicPlay',params:{songid:item.song_id}}" class="card url" v-for="(item,index) in todayRecommend" :key="index">
             <div class="album">
               <img :src="item.pic_big" :alt="item.title">
               <div class="name">{{ item.title }}</div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -28,8 +30,18 @@
             todayRecommend:[]
           }
       },
+      props:{
+        title:{
+          type:String,
+          default:"今日榜单"
+        },
+        type:{
+          type:String,
+          default:"1"
+        }
+      },
       mounted(){
-        var url = this.HOST + "/v1/restserver/ting?method=baidu.ting.billboard.billList&type=2&size=6&offset=0"
+        var url = this.HOST + "/v1/restserver/ting?method=baidu.ting.billboard.billList&type="+this.type+"&size=6&offset=0"
         this.$axios.get(url)
           .then(res => {
         this.todayRecommend = res.data.song_list

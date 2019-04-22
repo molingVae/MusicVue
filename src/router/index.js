@@ -11,11 +11,22 @@ import HotList from '../pages/music_list/hot_list'
 import KingList from '../pages/music_list/king_list'
 import NewList from '../pages/music_list/news_list'
 
+import MoreList from '../pages/morelist'
+
+import MusicPlay from '../pages/musicplay'
+
+import ArtistsDetails from '../pages/artistsDetails/artistsDetails'
+import LicateDetails from '../pages/licateDetails/licateDetails'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path:"musicplay",
+      name:"MusicPlay",
+      component:MusicPlay
+    },
     {
       path: '/',
       name: 'Index',
@@ -54,6 +65,21 @@ export default new Router({
         {
           path:"search",
           component:Search
+        },
+        {
+          path:"more",
+          name:"MoreList",
+          component:MoreList
+        },
+        {
+          path:"artistsDetails",
+          name:"ArtistsDetails",
+          component:ArtistsDetails
+        },
+        {
+          path:"licateDetails",
+          name:"LicateDetails",
+          component:LicateDetails
         }
       ]
     }

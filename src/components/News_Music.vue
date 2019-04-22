@@ -3,19 +3,21 @@
     <div class="hd log url">
         <h2>新歌速递</h2>
         <div>
-          更多
+          <router-link :to="{name:'MoreList',params:{type:this.type,title:'新歌速递'}}">
+            更多
+          </router-link>
         </div>
     </div>
     <div class="container">
         <div class="gallery">
             <div class="scroller">
-                  <div class="card url" v-for="(item,index) in newsMusic" :key="index">
+                  <router-link tag="div" :to="{name:'MusicPlay',params:{songid:item.song_id}}" class="card url" v-for="(item,index) in newsMusic" :key="index">
                     <div class="album">
                         <img :src="item.pic_big" :alt="item.title">
                         <div class="name">{{ item.title }}</div>
                         <div class="author">{{ item.artist_name }}</div>
                     </div>
-                </div>
+                </router-link>
             </div>
         </div>
     </div>
@@ -27,7 +29,8 @@ export default {
   name:"newsMusic",
   data(){
     return{
-      newsMusic:[]
+      newsMusic:[],
+      type:1
     }
   },
   mounted(){

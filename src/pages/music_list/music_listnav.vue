@@ -2,7 +2,9 @@
   <div class="music-nav">
     <div class="log url hd">
       <h2>音乐榜单</h2>
-      <div>更多</div>
+      <div>
+        更多
+      </div>
     </div>
     <ul>
       <li>
@@ -30,7 +32,7 @@
 
   .music-nav{
     background-color: #fff;
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 10px 17px;
   }
 
